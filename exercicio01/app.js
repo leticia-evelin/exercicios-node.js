@@ -74,7 +74,7 @@ entradaDados.question('Digite o gênero do(a) aluno(a): [FEMININO]  [MASCULINO] 
                             if(primeiraNota == ''){
                                 console.log('ERRO: É necessário preencher todos os campos.')
                                 entradaDados.close();
-                            }if(primeiraNota < 0 || primeiraNota > 100){
+                            }if(primeiraNota < 0 && primeiraNota > 100){
                                 console.log('ERRO: O sistema só aceita notas de 0 até 100.')
                                 entradaDados.close();
                             }
@@ -85,7 +85,7 @@ entradaDados.question('Digite o gênero do(a) aluno(a): [FEMININO]  [MASCULINO] 
                                 if(segundaNota == ''){
                                     console.log('ERRO: É necessário preencher todos os campos.')
                                     entradaDados.close();
-                                }if(segundaNota < 0 || segundaNota > 100){
+                                }if(segundaNota < 0 && segundaNota > 100){
                                     console.log('ERRO: O sistema só aceita notas de 0 até 100.')
                                     entradaDados.close();
                                 }
@@ -96,7 +96,7 @@ entradaDados.question('Digite o gênero do(a) aluno(a): [FEMININO]  [MASCULINO] 
                                     if(terceiraNota == ''){
                                         console.log('ERRO: É necessário preencher todos os campos')
                                         entradaDados.close();
-                                    }if(terceiraNota < 0 || terceiraNota > 100){
+                                    }if(terceiraNota < 0 && terceiraNota > 100){
                                         console.log('ERRO: O sistema só aceita notas de 0 até 100.')
                                         entradaDados.close();
                                     }
