@@ -6,28 +6,41 @@
  *****************************************************************/
 
 const tabuada = function(multiplicandoInicial, multiplicandoFinal, contInicial, contFinal){
-    let tabuadaInicial = Number(multiplicandoInicial);
-    let tabuadaFinal = Number(multiplicandoFinal);
+    let multiplicando = Number(multiplicandoInicial);
+    let multiplicandoF = Number(multiplicandoFinal);
     let contadorInicial = Number(contInicial);
     let contadorFinal = Number(contFinal);
-    let contTabuada = 0;
+    // let contTabuada = 0;
     let resultado;
     let status = true; 
 
 
-    if(tabuadaInicial == 0 || tabuadaFinal == 0 || contadorFinal == 0){
+    if(multiplicando == 0 || multiplicandoF == 0 || contadorFinal == 0){
         console.log('ERRO: O sistema não pode calcular com valor 0.')
         status = false;
     }
         
-    else if (isNaN(tabuadaInicial) || isNaN(tabuadaFinal) || isNaN(contadorInicial) || isNaN(contadorFinal)){
+    else if (isNaN(multiplicando) || isNaN(multiplicandoF) || isNaN(contadorInicial) || isNaN(contadorFinal)){
         console.log('ERRO: O sistema só calcula com números.')
         status = false;
     } 
-    else if(tabuadaInicial == '' || tabuadaFinal == '' || contadorInicial == '' || contadorFinal == ''){
+    else if(multiplicando == '' || multiplicandoF == '' || contadorInicial == '' || contadorFinal == ''){
         console.log('ERRO: É necessário inserir valores em todas as entradas.')
         status = false;
         
+    }
+
+    while (multiplicando <= multiplicandoF) {
+        console.log(`\n************* Tabuada do ${multiplicando} ************* \n`)
+
+        contadorInicial = contInicial
+        while (contadorInicial <= contadorFinal) {
+            resultado = multiplicando * contadorInicial
+
+            console.log(`${multiplicando} x ${contadorInicial} = ${resultado}`)
+            contadorInicial++
+        }
+        multiplicando++
     }
 }
 

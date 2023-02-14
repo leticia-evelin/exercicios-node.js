@@ -13,44 +13,54 @@ var entradaDados = readline.createInterface({
     output: process.stdout
 });
 
-entradaDados.question('Digite o número da tabuada inicial: \n', function(multiplicandoInicial){
-    let tabuadaInicial = multiplicandoInicial.replace(',' , '.')
 
-    //  if(tabuadaInicial == ''){
-    //      console.log('ERRO: É necessário inserir em todas as entradas.')
-    //      entradaDados.close();
-     if (tabuadaInicial < 2 || tabuadaInicial > 100){
-         console.log('ERRO: O sistema só aceita valores iniciais a partir de 2 até 100.')
-         entradaDados.close();
-     }
+console.log('\n*******************TABUADAS*******************\n')
 
-    entradaDados.question('Digite o número da tabuada final: \n', function(multiplicandoFinal){
-        let tabuadaFinal = multiplicandoFinal.replace(',' , '.')
+entradaDados.question('Digite o número da inicial da tabuada [ENTRE 2 E 100]: \n', function(multiplicandoInicial){
+    let multiplicando = Number(multiplicandoInicial.replace(',' , '.'))
 
-        if(tabuadaFinal == ''){
-            console.log('ERRO: É necessário inserir em todas as entradas.')
-        } else if (tabuadaFinal < 2 || tabuadaFinal > 100){
-            console.log('ERRO: O sistema só aceita valores finais a partir de 2 até 100.')
-        }
+    entradaDados.question('Digite o número final da tabuada [ENTRE 2 E 100]: \n', function(multiplicandoFinal){
+        let multiplicandoF = Number(multiplicandoFinal.replace(',' , '.'))
 
         entradaDados.question('Digite o número inicial do contador: \n', function(contInicial){
-            let contadorInicial = contInicial.replace(',' , '.')
-
-            if(contInicial == ''){
-                console.log('ERRO: É necessário inserir em todas as entradas.')
-            } else if (contInicial  < 1 || contInicial > 50){
-                console.log('ERRO: O sistema só aceita valores de 1 até 50 para o cálculo.')
-            } 
+            let contadorInicial = Number(contInicial.replace(',' , '.'))
 
             entradaDados.question('Digite o número final do contador: \n', function(contFinal){
                 let contadorFinal = contFinal.replace(',' , '.')
 
-                if(contFinal == ''){
-                    console.log('ERRO: É necessário inserir em todas as entradas.')
-                } else if (contFinal < 1 || contFinal > 50){
-                    console.log('ERRO: O sistema só aceita valores de 1 até 50 para o cálculo')
+                if (multiplicando > multiplicandoF || multiplicandoF < multiplicando) {
+                    console.log('ERRO: O número inicial não pode ser maior que o número final')
+                    entradaDados.close()
+        
+                } else if (multiplicando < 2 || multiplicando > 100 || multiplicandoF < 2 || multiplicandoF > 100) {
+                    console.log('ERRO: Digite apenas números de 2 até 100')
+                    entradaDados.close()
+        
+                } else {
+                    entradaDados.question('Digite o número do contador inicial da tabuada [ENTRE 1 E 50]: \n', function(contInicial){
+                        let contadorInicial = Number(contInicial.replace(',' , '.'))
+
+                        entradaDados.question('Digite o número do contador final da tabuada [ENTRE 1 E 50]: \n', function(contFinal){
+                            let contadorFinal = Number(contFinal.replace(',' , '.'))
+
+                            if (contadorInicial > contadorFinal || contadorFinal < contadorInicial) {
+                                console.log('ERRO: O número inicial não pode ser maior do que o final')
+                                entradaDados.close()
+
+                            } else if (contadorInicial < 1 || contadorFinal > 50) {
+                                console.log('ERRO: Digite apenas números de 1 até 50')
+                                entradaDados.close()
+        
+                            } else {
+                                matematica.tabuada(multiplicando, multiplicandoF, contadorInicial, contadorFinal)
+                                entradaDados.close()
+                            }
+                        });
+                    });
+
                 }
-            })
+                    
+            });
         });
     });
 });
