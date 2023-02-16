@@ -34,8 +34,33 @@ const relatorio = function(nome1, genero1, nome2, genero2, curso, disciplina){
     let nomeCurso = curso;
     let nomeDisciplina = disciplina;
 
-    
-   
+}
+
+
+const verificarGeneroAluno = function(genero1){
+    let generoAluno = genero1;
+
+    if (generoAluno == "Masculino"){
+        generoAluno = "Aluno"
+    }else if(generoAluno == "Feminino"){
+        generoAluno = "Aluna"
+    }else{
+        return false;
+    }
+    return generoAluno;
+}
+
+const verificarGeneroProfessor = function(genero2){
+    let generoProfessor = genero2;
+
+    if(generoProfessor == "Masculino"){
+        generoProfessor = "Professor"
+    }else if(generoProfessor == "Feminino"){
+        generoProfessor = "Professora"
+    }else{
+        return false
+    }
+    return generoProfessor
 }
 
 module.exports = {
