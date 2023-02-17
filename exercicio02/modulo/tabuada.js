@@ -12,24 +12,13 @@ const tabuada = function(multiplicandoInicial, multiplicandoFinal, contInicial, 
     let contadorFinal = Number(contFinal);
     let resultado;
 
-
-    // if(multiplicando == 0 || multiplicandoF == 0 || contadorFinal == 0){
-    //     console.log('ERRO: O sistema não pode calcular com valor 0.')
-    //     status = false;
-    // }
         
-    // else if (isNaN(multiplicando) || isNaN(multiplicandoF) || isNaN(contadorInicial) || isNaN(contadorFinal)){
+    // if (isNaN(multiplicando) || isNaN(multiplicandoF) || isNaN(contadorInicial) || isNaN(contadorFinal)){
     //     console.log('ERRO: O sistema só calcula com números.')
     //     status = false;
     // } 
-    // // else if(multiplicando == '' || multiplicandoF == '' || contadorInicial == '' || contadorFinal == ''){
-    //     console.log('ERRO: É necessário inserir valores em todas as entradas.')
-    //     status = false;
-        
-    // }
-
     while (multiplicando <= multiplicandoF) {
-        console.log(`\n************* Tabuada do ${multiplicando} ************* \n`)
+        console.log(`\n************* Tabuada do ${multiplicando} ************** \n`)
 
         contadorInicial = contInicial
         while (contadorInicial <= contadorFinal) {

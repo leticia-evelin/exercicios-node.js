@@ -44,7 +44,7 @@ entradaDados.question('Digite o número da inicial da tabuada [ENTRE 2 E 100]: \
                     console.log('ERRO: O sistema não pode calcular com valor 0.');
                    entradaDados.close();
                 } else {
-                    entradaDados.question('Digite o número do contador inicial da tabuada [ENTRE 1 E 50]: \n', function(contInicial){
+                    entradaDados.question('Digite o número do contador inicial da tabuada: \n', function(contInicial){
                         let contadorInicial = Number(contInicial.replace(',' , '.'));
 
                         entradaDados.question('Digite o número do contador final da tabuada [ENTRE 1 E 50]: \n', function(contFinal){
@@ -54,7 +54,7 @@ entradaDados.question('Digite o número da inicial da tabuada [ENTRE 2 E 100]: \
                                 console.log('ERRO: O número inicial não pode ser maior do que o final')
                                 entradaDados.close();
 
-                            } else if (contadorInicial < 1 || contadorFinal > 50) {
+                            } else if (contadorInicial < 0 || contadorFinal > 50) {
                                 console.log('ERRO: Digite apenas números de 1 até 50')
                                 entradaDados.close();
         

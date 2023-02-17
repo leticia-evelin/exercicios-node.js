@@ -15,15 +15,13 @@ const calculo = function(nota1, nota2, nota3, nota4){
     return media;
 }
     
-    
 
 const exame = function(mediaFinal, notaExame){
     let media = mediaFinal;
     let exame = notaExame;
     let resultadoExame = (Number(media) + Number(exame)) / 2
     return resultadoExame;
-   
-    
+ 
 }
 
 const relatorio = function(nome1, genero1, nome2, genero2, curso, disciplina){
